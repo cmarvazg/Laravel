@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Category;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Tipo_persona;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,6 +24,6 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call([RoleSeeder::class,CategorySeeder::class,UserSeeder::class]);
+        $this->call([RoleSeeder::class,CategorySeeder::class,UserSeeder::class,Tipo_personaSeeder::class]);
     }
 }

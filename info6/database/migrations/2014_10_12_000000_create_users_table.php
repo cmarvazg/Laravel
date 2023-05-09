@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('role_id')->constrained();
             $table->string('name');
-            //$table->string('role');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -35,8 +34,8 @@ return new class extends Migration
      */
     public function down()
     {
-        //Schema::dropIfExists('posts');
-        Schema::table('post', function(Blueprint $table){
+        //Schema::dropIfExists('user');
+        Schema::table('user', function(Blueprint $table){
             $table->dropColum('deleted_at');
         });
     }

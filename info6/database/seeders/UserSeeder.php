@@ -16,10 +16,8 @@ class UserSeeder extends Seeder
         User::insert([
             'role_id' => 1,
             'name' => 'Martín Vázquez',
-            //'role' => 'Administrador',
             'email' => 'martin@gmail.com',
             'password' => bcrypt('#Unicode0')
         ]);
-        
     }
 }
