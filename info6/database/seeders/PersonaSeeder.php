@@ -2,13 +2,22 @@
 
 namespace Database\Seeders;
 
+use App\Models\Persona;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Persona;
 
 class PersonaSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+    public function run()
+    {
+        Persona::insert([
+            'tipo_persona_id' => 1,
+            'razon_social' => 'Sociedad anónima',
+            'persona' => 'Física',
+            'rfc' => 'LOCM780425J87',
+            'domicilio' => 'Puerto Zihuatanejo no. 106',
+            'email' => 'parsona1@gmail.com',
+            'telefono' => '5547353499'
+        ]);
+    }
 }

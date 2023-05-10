@@ -54,7 +54,7 @@ class UserController extends Controller
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
         ]);
-        return back() -> with('status', 'El usuario fue creado satisfactoriamente.');
+        return back() -> with('status', 'Usuario creado satisfactoriamente');
     }
 
     /**
@@ -123,6 +123,6 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user -> delete();
-        return back()->with('status', 'usuario eliminado correctamente');
+        return back()->with('status', 'Usuario eliminado correctamente');
     }
 }

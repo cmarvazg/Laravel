@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\PersonaRequest;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Persona;
 
 class PersonaController extends Controller
 {
@@ -18,8 +18,8 @@ class PersonaController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('created_at', 'desc')->paginate(5);
-        return view('dashboard.user.index', ['users' => $users]);
+        $persona = Persona::orderBy('created_at', 'desc')->paginate(5);
+        return view('dashboard.persona.index', ['personas' => $persona]);
     }
 
     /**
@@ -27,55 +27,58 @@ class PersonaController extends Controller
      */
     public function create()
     {
-        $user = new User();
-        return view('dashboard.user.create', ['user' => $user]);
+        $persona = new Persona();
+        return view('dashboard.persona.create', ['persona' => $persona]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(UserRequest $request)
+    public function store(PersonaRequest $request)
     {
-        User::create([
-            'role_id' => $request->input('role_id'),
-            'name' => $request->input('name'),
+        Persona::create([
+            'tipo_persona_id' => $request->input('tipo_persona_id'),
+            'razon_social' => $request->input('razon_social'),
+            'persona' => $request->input('persona'),
+            'rfc' => $request->input('rfc'),
+            'domicilio' => $request->input('domicilio'),
             'email' => $request->input('email'),
-            'password' => Hash::make($request->input('password')),
+            'telefono' => $request->input('telefono')
         ]);
-        return back() -> with('status', 'El usuario fue creado satisfactoriamente.');
+        return back() -> with('status', 'Persona creada satisfactoriamente.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show(Persona $persona)
     {
-        return view('dashboard.user.show', ['user' => $user]);
+        return view('dashboard.persona.show', ['persona' => $persona]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit(Persona $persona)
     {
-        return view('dashboard.user.edit', ['user' => $user]);
+        return view('dashboard.persona.edit', ['persona' => $persona]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(PersonaRequest $request, Persona $persona)
     {
-        $user->update($request->validated());
-        return back()->with('status', 'Usuario actualizado correctamente');
+        $persona->update($request->validated());
+        return back()->with('status', 'Persona actualizada correctamente');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(Persona $persona)
     {
-        $user -> delete();
-        return back()->with('status', 'usuario eliminado correctamente');
+        $persona -> delete();
+        return back()->with('status', 'Persona eliminada correctamente');
     }
 }

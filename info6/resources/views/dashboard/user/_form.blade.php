@@ -2,12 +2,11 @@
 <div class="mb-3 mt-3">
     <label for="name" class="form-label fw-bold">Nombre</label>
     <input type="text" class="form-control" id="name" name="name" aria-describedby="name" value="{{ old('name',$user->name)}}">
-    <div id="name" class="form-text-light">Proporciona el nombre del usuario</div>
 </div>
 <div class="mb-3 mt-3">
     <label for="role_id" class="form-label fw-bold">Role</label>
     <select class="form-select" id="role_id" name="role_id">
-        <option value="" selected>Seleccione un rol</option>
+        <option value="" selected>Seleccione una opción</option>
         <option value="1" {{ old('role_id', $user->role_id) === 1 ? 'selected' : '' }}>Administrador</option>
         <option value="2" {{ old('role_id', $user->role_id) === 2 ? 'selected' : '' }}>Usuario</option>
     </select>
@@ -15,7 +14,6 @@
 <div class="mb-3 mt-3">
     <label for="email" class="form-label fw-bold">Email</label>
     <input type="text" class="form-control" id="email" name="email" aria-describedby="email" value="{{ old('email',$user->email)}}">
-    <div id="email" class="form-text-light">Proporciona el email del usuario</div>
 </div>
 <div class="mb-3 mt-3">
     <label for="password" class="form-label fw-bold">Contraseña</label>
@@ -23,7 +21,6 @@
         <input type="password" class="form-control" id="password" name="password" aria-describedby="password">
         <button type="button" class="btn btn-danger" id="showPasswordBtn">Mostrar</button>
     </div>
-    <div id="password" class="form-text-light">Proporciona la contraseña del usuario</div>
 </div>
 
 <script>

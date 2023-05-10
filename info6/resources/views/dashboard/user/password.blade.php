@@ -17,7 +17,6 @@
                 <input type="password" class="form-control" id="password" name="password" aria-describedby="password">
                 <button type="button" class="btn btn-danger" id="showPasswordBtn">Mostrar</button>
             </div>
-            <div id="password" class="form-text-light">Proporciona la nueva contraseña</div>
 
             <script>
                 const showPasswordBtn = document.getElementById('showPasswordBtn');

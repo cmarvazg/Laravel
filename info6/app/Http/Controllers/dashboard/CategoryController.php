@@ -43,7 +43,7 @@ class CategoryController extends Controller
     public function store(CategoryRequest $request)
     {
         Category::create($request->validated());
-        return back() -> with('status', 'La categoría fue creada satisfactoriamente.');
+        return back() -> with('status', 'Categoría creada satisfactoriamente');
     }
 
     /**

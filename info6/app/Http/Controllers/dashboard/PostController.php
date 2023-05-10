@@ -44,7 +44,7 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         Post::create($request->validated());
-        return back() -> with('status', 'El post fue creado satisfactoriamente.');
+        return back() -> with('status', 'Post  creado satisfactoriamente');
                 
         //echo "Post Store";
         //var_dump($request);
