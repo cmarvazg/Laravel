@@ -6,6 +6,7 @@ use App\Http\Controllers\dashboard\CategoryController;
 use App\Http\Controllers\dashboard\UserController;
 use App\Http\Controllers\dashboard\PasswordController;
 use App\Http\Controllers\dashboard\PersonaController;
+use App\Http\Controllers\dashboard\TransaccionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,5 +49,6 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('category',CategoryController :: class);
     Route::resource('persona',PersonaController :: class);
     Route::resource('user',UserController :: class);
+    Route::resource('transaccion',TransaccionController :: class);
     Route::get('/users/{user}/temp-password', [UserController::class, 'setTempPassword'])->name('user.setTempPassword');
 });

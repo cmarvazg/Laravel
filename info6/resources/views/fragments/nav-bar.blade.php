@@ -17,6 +17,7 @@
               <li><a class="dropdown-item" href="{{route('category.index')}}">Categorías</a></li>
               <li><a class="dropdown-item" href="{{route('persona.index')}}">Personas</a></li>
               <li><a class="dropdown-item" href="{{route('post.index')}}">Posts</a></li>
+              <li><a class="dropdown-item" href="{{route('transaccion.index')}}">Transacciones</a></li>
               <li><a class="dropdown-item" href="{{route('user.index')}}">Usuarios</a></li>
             </ul>
           </li>
