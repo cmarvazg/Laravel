@@ -10,5 +10,7 @@
         <p><strong>Fecha:</strong> {{ $transaction->date }}</p>
         <p><strong>Método:</strong> {{ $transaction->method }}</p>
         <p><strong>Referencia:</strong> {{ $transaction->reference }}</p>
+        <a href="{{ route('transaction.index') }}" class="btn btn-primary">Aceptar</a>
+        <br><br>
     </div>
 @endsection

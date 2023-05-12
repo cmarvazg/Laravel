@@ -4,12 +4,13 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Category;
 use Illuminate\Database\Seeder;
-use App\Models\User;
+use App\Models\TypeTransaction;
+use App\Models\Transaction;
 use App\Models\TypePerson;
 use App\Models\Person;
-use App\Models\TypeTransaction;
+use App\Models\User;
+use App\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,6 +27,6 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call([RoleSeeder::class,CategorySeeder::class,UserSeeder::class,TypePersonSeeder::class,PersonSeeder::class,TypeTransactionSeeder::class]);
+        $this->call([RoleSeeder::class,UserSeeder::class,TypePersonSeeder::class,PersonSeeder::class,TypeTransactionSeeder::class,TransactionSeeder::class]);
     }
 }

@@ -37,7 +37,7 @@ class PersonController extends Controller
     public function store(PersonRequest $request)
     {
         Person::create($request->validated());
-        return back() -> with('status', 'Persona creada satisfactoriamente');
+        return redirect()->route('person.index')->with('success', 'Persona creada correctamente');
     }
 
     /**
@@ -62,7 +62,7 @@ class PersonController extends Controller
     public function update(PersonRequest $request, Person $person)
     {
         $person->update($request->validated());
-        return back()->with('status', 'Persona actualizada correctamente');
+        return redirect()->route('person.index')->with('success', 'Persona actualizada correctamente');
     }
 
     /**
@@ -71,6 +71,6 @@ class PersonController extends Controller
     public function destroy(Person $person)
     {
         $person -> delete();
-        return back()->with('status', 'Persona eliminada correctamente');
+        return redirect()->route('person.index')->with('success', 'Persona eliminada correctamente');
     }
 }

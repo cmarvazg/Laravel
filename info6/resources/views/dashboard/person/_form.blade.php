@@ -37,4 +37,5 @@
 </div>
 
 <button type="submit" class="btn btn-primary">Guardar</button>
+<a href="{{ route('person.index') }}" class="btn btn-danger">Cancelar</a>
 <br><br><br>

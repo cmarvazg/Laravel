@@ -7,7 +7,6 @@
     <div class="alert alert-info" role="alert">
         Debes establecer una nueva contraseña para poder continuar.
     </div>
-
     <form action="{{route('user.setNewPassword', $user->id)}}" method="POST">
         @method('PUT')
         @csrf
@@ -31,8 +30,7 @@
                     }
                 });
             </script>
-
-            <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
 @endsection

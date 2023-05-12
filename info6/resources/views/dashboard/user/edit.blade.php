@@ -7,9 +7,18 @@
     <form action="{{route('user.update', $user->id)}}" method="POST">
         @method('PUT')
         @csrf
+        @csrf
         <div class="mb-3 mt-3">
-            <label for="name" class="form-label fw-bold">Nombre</label>
+            <label for="name" class="form-label fw-bold">Nombre(s)</label>
             <input type="text" class="form-control" id="name" name="name" aria-describedby="name" value="{{ old('name',$user->name)}}">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="dad_last_name" class="form-label fw-bold">Apellido paterno</label>
+            <input type="text" class="form-control" id="dad_last_name" name="dad_last_name" aria-describedby="dad_last_name" value="{{ old('dad_last_name',$user->dad_last_name)}}">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="mom_last_name" class="form-label fw-bold">Apellido materno</label>
+            <input type="text" class="form-control" id="mom_last_name" name="mom_last_name" aria-describedby="mom_last_name" value="{{ old('mom_last_name',$user->mom_last_name)}}">
         </div>
         <div class="mb-3 mt-3">
             <label for="role_id" class="form-label fw-bold">Rol</label>
@@ -25,5 +34,8 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{{ route('user.index') }}" class="btn btn-danger">Cancelar</a>
+        <br><br><br>
     </form>
 @endsection
+

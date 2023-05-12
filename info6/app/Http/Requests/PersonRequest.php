@@ -25,11 +25,11 @@ class PersonRequest extends FormRequest
         return
         [
             'type_person_id' => ['required',Rule::in([1, 2]),], 
-            'business_name' => 'required | min:5',
+            'business_name' => 'required',
             'person' => ['required',Rule::in(['Física', 'Moral']),],  
             'rfc' => 'required | min:13 | max:13',
-            'home' => 'required | min:5',
-            'email' => 'required | min:5',
+            'home' => 'required',
+            'email' => 'required',
             'phone' => 'required | min:10 | max:10'
         ];
     }

@@ -48,7 +48,7 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         User::create($request->validated());
-        return back() -> with('status', 'Usuario creado satisfactoriamente');
+        return redirect()->route('user.index')->with('success', 'Usuario creado correctamente');
     }
 
     /**
@@ -83,7 +83,7 @@ class UserController extends Controller
     public function update(UserEditRequest $request, User $user)
     {
         $user->update($request->validated());
-        return back()->with('status', 'Usuario actualizado correctamente');
+        return redirect()->route('user.index')->with('success', 'Usuario actualizado correctamente');
     }
 
     public function setTempPassword(User $user)
@@ -104,7 +104,7 @@ class UserController extends Controller
         $user->temp_password = null;
         $user->save();
         
-        return back()->with('status', 'Contraseña actualizada correctamente');
+        return redirect()->route('user.index')->with('status', 'Contraseña actualizada correctamente');
     }
 
     /**
@@ -115,7 +115,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        $user -> delete();
-        return back()->with('status', 'Usuario eliminado correctamente');
+        $user->delete();
+        return redirect()->route('user.index')->with('success', 'Usuario eliminado correctamente');
     }
 }

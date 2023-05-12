@@ -37,7 +37,7 @@ class TransactionController extends Controller
     public function store(TransactionRequest $request)
     {
         Transaction::create($request->validated());
-        return back() -> with('status', 'Transacción creada satisfactoriamente');
+        return redirect()->route('transaction.index')->with('success', 'Transacción creada correctamente');
     }
 
     /**
@@ -62,7 +62,7 @@ class TransactionController extends Controller
     public function update(TransactionRequest $request, Transaction $transaction)
     {
         $transaction->update($request->validated());
-        return back()->with('status', 'Transacción actualizada correctamente');
+        return redirect()->route('transaction.index')->with('success', 'Transacción actualizada correctamente');
     }
 
     /**
@@ -71,6 +71,6 @@ class TransactionController extends Controller
     public function destroy(Transaction $transaction)
     {
         $transaction -> delete();
-        return back()->with('status', 'Transacción eliminada correctamente');
+        return redirect()->route('transaction.index')->with('success', 'Transacción eliminada correctamente');
     }
 }

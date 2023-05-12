@@ -11,5 +11,7 @@
         <p><strong>Domicilio:</strong> {{ $person->home }}</p>
         <p><strong>Email:</strong> {{ $person->email }}</p>
         <p><strong>Teléfono:</strong> {{ $person->phone }}</p>
+        <a href="{{ route('person.index') }}" class="btn btn-primary">Aceptar</a>
+        <br><br>
     </div>
 @endsection

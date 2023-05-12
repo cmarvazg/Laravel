@@ -2,6 +2,11 @@
 
 @section('title', 'Personas')
 @section('content')
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
     <a href="{{route('person.create')}}" class="btn btn-primary mt-3 mb-1">Agregar</a>
     <table class="table table-dark table-striped mt-3">
         <thead>

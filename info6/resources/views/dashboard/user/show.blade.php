@@ -15,7 +15,8 @@
                 <strong>{{ session('tempPassword') }}</strong> 
             a este usuario
         </div>
-
         @endif
+        <a href="{{ route('user.index') }}" class="btn btn-primary">Aceptar</a>
+        <br><br>
     </div>
 @endsection
