@@ -24,7 +24,7 @@
                     <a href="{{route('transaction.edit', $transaction->id)}}" class="btn btn-primary">Editar</a>
                 </td>
                 <td class="text-center">
-                    <form action="{{route('transaction.destroy', $transaction->id)}}" method = "post">
+                    <form action="{{route('transaction.destroy', $transaction->id)}}" method = "post" onsubmit="return confirm('¿Estás seguro de que quieres eliminar la transacción {{ $transaction->id }}?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Eliminar</button>

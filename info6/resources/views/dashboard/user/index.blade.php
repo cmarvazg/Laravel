@@ -24,10 +24,10 @@
                 <td class="text-center">
                     <a href="{{route('user.show', $user->id)}}" class="btn btn-primary">Mostrar</a>
                     <a href="{{route('user.edit', $user->id)}}" class="btn btn-primary">Editar</a>
-                    <a href="{{route('user.setTempPassword', $user->id)}}" class="btn btn-primary">Restablecer contraseña</a>
+                    <a href="{{route('user.setTempPassword', $user->id)}}" class="btn btn-success">Restablecer contraseña</a>
                 </td>
                 <td class="text-center">
-                    <form action="{{route('user.destroy', $user->id)}}" method = "post">
+                    <form action="{{route('user.destroy', $user->id)}}" method="post" onsubmit="return confirm('¿Estás seguro de que quieres eliminar el usuario {{ $user->id }}?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -35,7 +35,7 @@
                 </td>
             </tr>
             @endforeach
-    </tbody>
+        </tbody>
     </table>
     <nav class="pagination justify-content-center">
         {{$users->links()}}

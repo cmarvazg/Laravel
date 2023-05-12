@@ -24,7 +24,7 @@
                     <a href="{{route('person.edit', $person->id)}}" class="btn btn-primary">Editar</a>
                 </td>
                 <td class="text-center">
-                    <form action="{{route('person.destroy', $person->id)}}" method = "post">
+                    <form action="{{route('person.destroy', $person->id)}}" method = "post" onsubmit="return confirm('¿Estás seguro de que quieres eliminar la persona {{ $person->id }}?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Eliminar</button>
