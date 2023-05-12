@@ -2,7 +2,7 @@
 
 @section('title', 'Transacciones')
 @section('content')
-    <a href="{{route('transaccion.create')}}" class="btn btn-primary mt-3 mb-1">Agregar</a>
+    <a href="{{route('transaction.create')}}" class="btn btn-primary mt-3 mb-1">Agregar</a>
     <table class="table table-dark table-striped mt-3">
         <thead>
             <tr>
@@ -14,17 +14,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($transacciones as $transaccion)  
+            @foreach ($transactions as $transaction)  
             <tr>
-                <th scope="row" class="text-center">{{ $transaccion->id }}</th>
-                <td class="text-center">{{ $transaccion->persona->rfc }}</td>
-                <td class="text-center">{{ $transaccion->tipo_transaccion->tipo }}</td>
+                <th scope="row" class="text-center">{{ $transaction->id }}</th>
+                <td class="text-center">{{ $transaction->person->rfc }}</td>
+                <td class="text-center">{{ $transaction->type_transaction->type }}</td>
                 <td class="text-center">
-                    <a href="{{route('transaccion.show', $transaccion->id)}}" class="btn btn-primary">Mostrar</a>
-                    <a href="{{route('transaccion.edit', $transaccion->id)}}" class="btn btn-primary">Editar</a>
+                    <a href="{{route('transaction.show', $transaction->id)}}" class="btn btn-primary">Mostrar</a>
+                    <a href="{{route('transaction.edit', $transaction->id)}}" class="btn btn-primary">Editar</a>
                 </td>
                 <td class="text-center">
-                    <form action="{{route('transaccion.destroy', $transaccion->id)}}" method = "post">
+                    <form action="{{route('transaction.destroy', $transaction->id)}}" method = "post">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -35,6 +35,6 @@
     </tbody>
     </table>
     <nav class="pagination justify-content-center">
-        {{$transacciones->links()}}
+        {{$transactions->links()}}
     </nav>
 @endsection

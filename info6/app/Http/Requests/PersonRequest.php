@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class PersonaRequest extends FormRequest
+class PersonRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,13 @@ class PersonaRequest extends FormRequest
     {
         return
         [
-            'tipo_persona_id' => ['required',Rule::in([1, 2]),], 
-            'razon_social' => 'required | min:5',
-            'persona' => ['required',Rule::in(['Física', 'Moral']),],  
+            'type_person_id' => ['required',Rule::in([1, 2]),], 
+            'business_name' => 'required | min:5',
+            'person' => ['required',Rule::in(['Física', 'Moral']),],  
             'rfc' => 'required | min:13 | max:13',
-            'domicilio' => 'required | min:5',
+            'home' => 'required | min:5',
             'email' => 'required | min:5',
-            'telefono' => 'required | min:10 | max:10'
+            'phone' => 'required | min:10 | max:10'
         ];
     }
 }

@@ -4,8 +4,8 @@
 @section('content')
     @include('fragments.validation-errors')
     @include('fragments.session')
-    <form action="{{route('persona.update', $persona->id)}}" method="POST">
+    <form action="{{route('person.update', $person->id)}}" method="POST">
         @method('PUT')
-        @include('dashboard.persona._form')
+        @include('dashboard.person._form')
     </form>
 @endsection

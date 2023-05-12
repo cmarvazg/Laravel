@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tipo_transaccions', function (Blueprint $table) {
+        Schema::create('type_transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo');
+            $table->string('type');
             $table->softDeletes($colum = 'deleted_at', $precision = 0);
             $table->timestamps();
         });
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tipo_transaccion');
+        Schema::dropIfExists('type_transactions');
     }
 };

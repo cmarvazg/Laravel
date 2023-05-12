@@ -5,8 +5,8 @@ use App\Http\Controllers\dashboard\PostController;
 use App\Http\Controllers\dashboard\CategoryController;
 use App\Http\Controllers\dashboard\UserController;
 use App\Http\Controllers\dashboard\PasswordController;
-use App\Http\Controllers\dashboard\PersonaController;
-use App\Http\Controllers\dashboard\TransaccionController;
+use App\Http\Controllers\dashboard\PersonController;
+use App\Http\Controllers\dashboard\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,8 +47,8 @@ Route::put('/users/{user}/set-new-password', [UserController::class, 'setNewPass
 Route::middleware(['admin'])->group(function () {
     Route::resource('post',PostController :: class);
     Route::resource('category',CategoryController :: class);
-    Route::resource('persona',PersonaController :: class);
+    Route::resource('person',PersonController :: class);
     Route::resource('user',UserController :: class);
-    Route::resource('transaccion',TransaccionController :: class);
+    Route::resource('transaction',TransactionController :: class);
     Route::get('/users/{user}/temp-password', [UserController::class, 'setTempPassword'])->name('user.setTempPassword');
 });

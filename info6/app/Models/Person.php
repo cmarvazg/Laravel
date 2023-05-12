@@ -3,27 +3,27 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Persona extends Model
+class Person extends Model
 {
     use HasFactory, SoftDeletes, Notifiable;
 
     //Son los atributos que se acepta que llegen a la BD, para proteger de inyección
     protected $fillable = [
-        'tipo_persona_id',
-        'razon_social',
-        'persona',
+        'type_person_id',
+        'business_name',
+        'person',
         'rfc',
-        'domicilio',
+        'home',
         'email',
-        'telefono'
+        'phone'
     ];
 
-    public function tipo_persona()
+    public function type_person()
     {
-        return $this->belongsTo(Tipo_persona::class, 'tipo_persona_id', 'id');
+        return $this->belongsTo(TypePerson::class, 'type_person_id', 'id');
     }
 }

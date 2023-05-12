@@ -7,9 +7,9 @@ namespace Database\Seeders;
 use App\Models\Category;
 use Illuminate\Database\Seeder;
 use App\Models\User;
-use App\Models\Tipo_persona;
-use App\Models\Persona;
-use App\Models\Tipo_transaccion;
+use App\Models\TypePerson;
+use App\Models\Person;
+use App\Models\TypeTransaction;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,6 +26,6 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call([RoleSeeder::class,CategorySeeder::class,UserSeeder::class,Tipo_personaSeeder::class,PersonaSeeder::class,Tipo_transaccionSeeder::class]);
+        $this->call([RoleSeeder::class,CategorySeeder::class,UserSeeder::class,TypePersonSeeder::class,PersonSeeder::class,TypeTransactionSeeder::class]);
     }
 }

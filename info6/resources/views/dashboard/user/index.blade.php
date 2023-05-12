@@ -7,7 +7,8 @@
         <thead>
             <tr>
                 <th scope="col" class="text-center">ID</th>
-                <th scope="col" class="text-center">Nombre</th>
+                <th scope="col" class="text-center">Apellido paterno</th>
+                <th scope="col" class="text-center">Apellido materno</th>
                 <th scope="col" class="text-center">Role</th>
                 <th scope="col" class="text-center">Opciones</th>
                 <th scope="col" class="text-center">Eliminar</th>
@@ -17,7 +18,8 @@
             @foreach ($users as $user)  
             <tr>
                 <th scope="row" class="text-center">{{ $user->id }}</th>
-                <td class="text-center">{{ $user->name }}</td>
+                <td class="text-center">{{ $user->dad_last_name }}</td>
+                <td class="text-center">{{ $user->mom_last_name }}</td>
                 <td class="text-center">{{ $user->role->role }}</td>
                 <td class="text-center">
                     <a href="{{route('user.show', $user->id)}}" class="btn btn-primary">Mostrar</a>

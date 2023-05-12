@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class TransaccionRequest extends FormRequest
+class TransactionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,12 @@ class TransaccionRequest extends FormRequest
     {
         return 
         [
-            'tipo_transaccion_id' => ['required',Rule::in([1, 2]),],
-            'persona_id' => ['required', 'exists:personas,id'],
-            'monto' => 'required',
-            'fecha' => 'required',
-            'metodo' => ['required',Rule::in(['Depósito', 'Transferencia']),],  
-            'referencia' => 'required'
+            'type_transaction_id' => ['required',Rule::in([1, 2]),],
+            'person_id' => ['required', 'exists:people,id'],
+            'amount' => 'required',
+            'date' => 'required',
+            'method' => ['required',Rule::in(['Depósito', 'Transferencia']),],  
+            'reference' => 'required'
         ];
     }
 }

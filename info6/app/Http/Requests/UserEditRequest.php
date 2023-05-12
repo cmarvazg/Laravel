@@ -25,6 +25,8 @@ class UserEditRequest extends FormRequest
         return [
             'role_id' => ['required',Rule::in([1, 2]),],
             'name' => 'required',
+            'dad_last_name' => 'required',
+            'mom_last_name' => 'required',
             'email' => 'required'
         ];
     }

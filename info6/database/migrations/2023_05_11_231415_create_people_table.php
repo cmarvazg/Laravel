@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('personas', function (Blueprint $table) {
+        Schema::create('people', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tipo_persona_id')->constrained();
-            $table->string('razon_social');
-            $table->string('persona');
+            $table->foreignId('type_person_id')->constrained();
+            $table->string('business_name');
+            $table->string('person');
             $table->string('rfc');
-            $table->string('domicilio');
+            $table->string('home');
             $table->string('email');
-            $table->string('telefono');
+            $table->string('phone');
             $table->softDeletes($colum = 'deleted_at', $precision = 0);
             $table->timestamps();
         });
@@ -30,7 +30,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('persona', function(Blueprint $table){
+        Schema::table('people', function(Blueprint $table){
             $table->dropColum('deleted_at');
         });
     }

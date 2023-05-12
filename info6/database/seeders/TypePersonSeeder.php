@@ -4,15 +4,15 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Tipo_transaccion;
+use App\Models\TypePerson;
 
-class Tipo_transaccionSeeder extends Seeder
+class TypePersonSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Tipo_transaccion::insert([['tipo' => 'Anticipo'],['tipo' => 'Pago']]);
+        TypePerson::insert([['type' => 'Cliente'],['type' => 'Proveedor']]);
     }
 }

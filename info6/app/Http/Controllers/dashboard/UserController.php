@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserEditRequest;
 use App\Http\Requests\PasswordRequest;
-use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\UserRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -47,13 +47,7 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        //User::create($request->validated());
-        User::create([
-            'role_id' => $request->input('role_id'),
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'password' => Hash::make($request->input('password')),
-        ]);
+        User::create($request->validated());
         return back() -> with('status', 'Usuario creado satisfactoriamente');
     }
 
@@ -65,7 +59,6 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //dd($user);
         return view('dashboard.user.show', ['user' => $user]);
     }
 

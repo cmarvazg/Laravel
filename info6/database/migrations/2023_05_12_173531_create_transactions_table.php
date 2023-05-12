@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transaccions', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tipo_transaccion_id')->constrained();
-            $table->foreignId('persona_id')->constrained();
-            $table->decimal('monto');
-            $table->date('fecha');
-            $table->string('metodo');
-            $table->string('referencia');
+            $table->foreignId('type_transaction_id')->constrained();
+            $table->foreignId('person_id')->constrained();
+            $table->decimal('amount');
+            $table->date('date');
+            $table->string('method');
+            $table->string('reference');
             $table->softDeletes($colum = 'deleted_at', $precision = 0);
             $table->timestamps();
         });
@@ -29,7 +29,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('transaccion', function(Blueprint $table){
+        Schema::table('transaction', function(Blueprint $table){
             $table->dropColum('deleted_at');
         });
     }

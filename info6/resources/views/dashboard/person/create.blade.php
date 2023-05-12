@@ -4,7 +4,7 @@
 @section('content')
     @include('fragments.validation-errors')
     @include('fragments.session')
-    <form action="{{route('persona.store')}}" method="POST">
-       @include('dashboard.persona._form')
+    <form action="{{route('person.store')}}" method="POST">
+       @include('dashboard.person._form')
     </form>
 @endsection

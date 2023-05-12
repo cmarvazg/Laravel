@@ -19,7 +19,7 @@
     @can(1)
     <body class="text-bg-secondary">
         <div>
-            @include('fragments.nav-bar')
+            @include('fragments.nav-bar-admin')
             <div class="container">
                 @yield('content')
             </div>
