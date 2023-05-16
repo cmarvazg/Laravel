@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 use App\Models\TypeTransaction;
 use App\Models\Transaction;
 use App\Models\TypePerson;
+use App\Models\Proyect;
 use App\Models\Person;
 use App\Models\User;
 use App\Models\Role;
@@ -27,6 +28,6 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call([RoleSeeder::class,UserSeeder::class,TypePersonSeeder::class,PersonSeeder::class,TypeTransactionSeeder::class,TransactionSeeder::class]);
+        $this->call([RoleSeeder::class,UserSeeder::class,TypePersonSeeder::class,PersonSeeder::class,TypeTransactionSeeder::class,TransactionSeeder::class,ProyectSeeder::class]);
     }
 }

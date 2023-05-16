@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Info 6</a>
+      <a class="navbar-brand" href="{{route('home')}}">Info 6</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -15,6 +15,7 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
               <li><a class="dropdown-item" href="{{route('person.index')}}">Personas</a></li>
+              <li><a class="dropdown-item" href="{{route('proyect.index')}}">Proyectos</a></li>
               <li><a class="dropdown-item" href="{{route('transaction.index')}}">Transacciones</a></li>
               <li><a class="dropdown-item" href="{{route('user.index')}}">Usuarios</a></li>
             </ul>

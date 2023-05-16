@@ -7,7 +7,7 @@
         {{ session('success') }}
     </div>
 @endif
-    <a href="{{route('user.create')}}" class="btn btn-primary mt-3 mb-1">Agregar</a>
+    <a href="{{route('user.create')}}" class="btn btn-primary mt-3 mb-1">Nuevo usuario</a>
     <table class="table table-dark table-striped mt-3">
         <thead>
             <tr>
