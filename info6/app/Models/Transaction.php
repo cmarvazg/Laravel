@@ -14,6 +14,7 @@ class Transaction extends Model
     //Son los atributos que se acepta que llegen a la BD, para proteger de inyección
     protected $fillable = [
         'type_transaction_id',
+        'proyect_id',
         'person_id',
         'amount',
         'date',
@@ -24,6 +25,11 @@ class Transaction extends Model
     public function type_transaction()
     {
         return $this->belongsTo(TypeTransaction::class, 'type_transaction_id', 'id');
+    }
+
+    public function proyect()
+    {
+        return $this->belongsTo(Proyect::class, 'proyect_id', 'id');
     }
 
     public function person()

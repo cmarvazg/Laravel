@@ -26,8 +26,9 @@ class ProyectRequest extends FormRequest
             'transaction_id' => 'nullable',
             'name' => 'required',
             'date' => 'required',
-            'subtotal' => 'required',
-            'iva' => 'required',
+            'subtotal' => 'nullable',
+            'iva' => 'nullable',
+            'total' => 'nullable',
             'concept' => 'required',
             'comment' => 'required'
         ];

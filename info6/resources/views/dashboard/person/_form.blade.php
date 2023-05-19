@@ -8,6 +8,15 @@
     </select>
 </div>
 <div class="mb-3 mt-3">
+    <label for="proyect_id" class="form-label fw-bold">Proyecto</label>
+    <select class="form-select" id="proyect_id" name="proyect_id" aria-describedby="proyect">
+        <option value="" selected>Seleccione una opción</option>
+        @foreach(App\Models\Proyect::all() as $proyect)
+            <option value="{{ $proyect->id }}" {{ old('proyect_id',$person->proyect_id) == $proyect->id ? 'selected' : '' }}>{{ $proyect->name }}</option>
+        @endforeach
+    </select>
+</div>
+<div class="mb-3 mt-3">
     <label for="business_name" class="form-label fw-bold">Razón social</label>
     <input type="text" class="form-control" id="business_name" name="business_name" aria-describedby="business_name" value="{{ old('business_name',$person->business_name)}}">
 </div>

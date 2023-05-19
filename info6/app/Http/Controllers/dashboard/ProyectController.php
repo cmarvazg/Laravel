@@ -36,9 +36,24 @@ class ProyectController extends Controller
      */
     public function store(ProyectRequest $request)
     {
-        Proyect::create($request->validated());
+        $subtotal = $request->subtotal;
+        $iva = $subtotal * 0.16;
+        $total = $subtotal + $iva;
+
+        Proyect::create
+        ([
+            'name' => $request->name,
+            'date' => $request->date,
+            'subtotal' => $subtotal,
+            'iva' => $iva,
+            'total' => $total,
+            'concept' => $request->concept,
+            'comment' => $request->comment
+        ]);
+
         return redirect()->route('proyect.index')->with('success', 'Proyecto creado correctamente');
     }
+
 
     /**
      * Display the specified resource.
@@ -61,9 +76,23 @@ class ProyectController extends Controller
      */
     public function update(ProyectRequest $request, Proyect $proyect)
     {
-        $proyect->update($request->validated());
+        $subtotal = $request->subtotal;
+        $iva = $subtotal * 0.16;
+        $total = $subtotal + $iva;
+    
+        $proyect->update([
+            'name' => $request->name,
+            'date' => $request->date,
+            'subtotal' => $subtotal,
+            'iva' => $iva,
+            'total' => $total,
+            'concept' => $request->concept,
+            'comment' => $request->comment
+        ]);
+        
         return redirect()->route('proyect.index')->with('success', 'Proyecto actualizado correctamente');
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -72,5 +101,13 @@ class ProyectController extends Controller
     {
         $proyect -> delete();
         return redirect()->route('proyect.index')->with('success', 'Proyecto eliminado correctamente');
+    }
+
+    public function showPeople($proyect)
+    {
+        $proyect = Proyect::findOrFail($proyect); // Obtener el proyecto correspondiente
+        $people = $proyect->people; // Obtener las personas relacionadas al proyecto
+
+        return view('dashboard.proyect.people', compact('proyect', 'people'));
     }
 }

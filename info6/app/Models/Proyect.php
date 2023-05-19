@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Person;
 
 class Proyect extends Model
 {
@@ -13,7 +14,6 @@ class Proyect extends Model
 
     //Son los atributos que se acepta que llegen a la BD, para proteger de inyección
     protected $fillable = [
-        'transaction_id',
         'name',
         'date',
         'subtotal',
@@ -23,8 +23,8 @@ class Proyect extends Model
         'comment'
     ];
 
-    public function transaction()
+    public function people()
     {
-        return $this->belongsTo(Transaction::class, 'transaction_id', 'id');
+        return $this->hasMany(Person::class);
     }
 }

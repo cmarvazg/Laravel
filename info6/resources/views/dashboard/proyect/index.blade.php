@@ -14,7 +14,9 @@
                 <th scope="col" class="text-center">ID</th>
                 <th scope="col" class="text-center">Nombre del proyecto</th>
                 <th scope="col" class="text-center">Opciones</th>
+                <th scope="col" class="text-center">Personas</th>
                 <th scope="col" class="text-center">Transacciones</th>
+                <th scope="col" class="text-center">Usuarios</th>
                 <th scope="col" class="text-center">Eliminar</th>
             </tr>
         </thead>
@@ -28,7 +30,14 @@
                     <a href="{{route('proyect.edit', $proyect->id)}}" class="btn btn-primary">Editar</a>
                 </td>
                 <td class="text-center">
-                    <a href="{{route('transaction.create')}}" class="btn btn-primary">Nueva transacción</a>
+                    <a href="{{ route('proyect.showPeople', $proyect->id) }}" class="btn btn-info">Mostrar</a>
+                </td>
+                <td class="text-center">
+                    <a href="#" class="btn btn-info">Mostrar</a>
+                </td>
+                <td class="text-center">
+                    <a href="#" class="btn btn-info">Agregar</a>
+                    <a href="#" class="btn btn-info">Mostrar</a>
                 </td>
                 <td class="text-center">
                     <form action="{{route('proyect.destroy', $proyect->id)}}" method = "post" onsubmit="return confirm('¿Estás seguro de que quieres eliminar el proyecto {{ $proyect->id }}?');">

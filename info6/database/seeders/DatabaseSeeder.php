@@ -12,6 +12,7 @@ use App\Models\Proyect;
 use App\Models\Person;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Category;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,6 +29,14 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call([RoleSeeder::class,UserSeeder::class,TypePersonSeeder::class,PersonSeeder::class,TypeTransactionSeeder::class,TransactionSeeder::class,ProyectSeeder::class]);
+        $this->call([
+            CategorySeeder::class,
+            RoleSeeder::class,
+            UserSeeder::class,
+            ProyectSeeder::class,
+            TypePersonSeeder::class,
+            PersonSeeder::class,
+            TypeTransactionSeeder::class,
+            TransactionSeeder::class]);
     }
 }

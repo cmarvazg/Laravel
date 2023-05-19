@@ -16,6 +16,7 @@
                 <th scope="col" class="text-center">Apellido materno</th>
                 <th scope="col" class="text-center">Role</th>
                 <th scope="col" class="text-center">Opciones</th>
+                <th scope="col" class="text-center">Restablecer contraseña</th>
                 <th scope="col" class="text-center">Eliminar</th>
             </tr>
         </thead>
@@ -29,7 +30,9 @@
                 <td class="text-center">
                     <a href="{{route('user.show', $user->id)}}" class="btn btn-primary">Mostrar</a>
                     <a href="{{route('user.edit', $user->id)}}" class="btn btn-primary">Editar</a>
-                    <a href="{{route('user.setTempPassword', $user->id)}}" class="btn btn-success">Restablecer contraseña</a>
+                </td>
+                <td class="text-center">
+                    <a href="{{route('user.setTempPassword', $user->id)}}" class="btn btn-info">Restablecer contraseña</a>
                 </td>
                 <td class="text-center">
                     <form action="{{route('user.destroy', $user->id)}}" method="post" onsubmit="return confirm('¿Estás seguro de que quieres eliminar el usuario {{ $user->id }}?');">

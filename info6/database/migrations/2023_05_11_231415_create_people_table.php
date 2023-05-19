@@ -14,12 +14,14 @@ return new class extends Migration
         Schema::create('people', function (Blueprint $table) {
             $table->id();
             $table->foreignId('type_person_id')->constrained();
+            $table->foreignId('proyect_id')->constrained();
             $table->string('business_name');
             $table->string('person');
             $table->string('rfc');
             $table->string('home');
             $table->string('email');
             $table->string('phone');
+            $table->decimal('debt')->nullable();
             $table->softDeletes($colum = 'deleted_at', $precision = 0);
             $table->timestamps();
         });

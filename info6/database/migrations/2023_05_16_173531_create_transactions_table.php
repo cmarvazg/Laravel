@@ -11,16 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('proyects', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('transaction_id')->nullable();
-            $table->string('name');
+            $table->foreignId('type_transaction_id')->constrained();
+            $table->foreignId('proyect_id')->constrained();
+            $table->foreignId('person_id')->constrained();
+            $table->decimal('amount');
             $table->date('date');
-            $table->decimal('subtotal');
-            $table->decimal('iva');
-            $table->decimal('total');
-            $table->string('concept');
-            $table->string('comment');
+            $table->string('method');
+            $table->string('reference');
             $table->softDeletes($colum = 'deleted_at', $precision = 0);
             $table->timestamps();
         });
@@ -31,7 +30,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('proyect', function(Blueprint $table){
+        Schema::table('transaction', function(Blueprint $table){
             $table->dropColum('deleted_at');
         });
     }

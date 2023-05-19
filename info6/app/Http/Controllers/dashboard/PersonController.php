@@ -73,4 +73,20 @@ class PersonController extends Controller
         $person -> delete();
         return redirect()->route('person.index')->with('success', 'Persona eliminada correctamente');
     }
+
+    public function setDebt($person)
+    {
+        $person = Person::findOrFail($person);
+        return view('dashboard.proyect.debt', ['person' => $person]);   
+    }
+
+    public function storeDebt(Request $request, $person)
+    {
+        $person = Person::find($person);
+        $person->debt = $request->debt;
+        $person->save();
+
+        return redirect()->route('proyect.index')->with('status', 'Deuda guardada correctamente');
+    }
+
 }

@@ -50,6 +50,9 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('category',CategoryController :: class);
     Route::resource('person',PersonController :: class);
     Route::resource('proyect',ProyectController :: class);
+    Route::get('/proyect/{proyect}/people', [ProyectController::class, 'showPeople'])->name('proyect.showPeople');
+    Route::get('/person/{person}/setDebt', [PersonController::class, 'setDebt'])->name('person.setDebt');
+    Route::put('/person/{person}/storeDebt', [PersonController::class, 'storeDebt'])->name('person.storeDebt');
     Route::resource('user',UserController :: class);
     Route::resource('transaction',TransactionController :: class);
     Route::get('/users/{user}/temp-password', [UserController::class, 'setTempPassword'])->name('user.setTempPassword');

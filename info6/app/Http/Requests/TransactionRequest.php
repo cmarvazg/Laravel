@@ -25,6 +25,7 @@ class TransactionRequest extends FormRequest
         return 
         [
             'type_transaction_id' => ['required',Rule::in([1, 2]),],
+            'proyect_id' => 'required',
             'person_id' => ['required', 'exists:people,id'],
             'amount' => 'required',
             'date' => 'required',

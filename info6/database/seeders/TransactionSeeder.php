@@ -18,6 +18,7 @@ class TransactionSeeder extends Seeder
             [
                 [
                     'type_transaction_id' => 1,
+                    'proyect_id' => 1,
                     'person_id' => 1,
                     'amount' => 100,
                     'date' => '2023-05-01',
@@ -26,6 +27,7 @@ class TransactionSeeder extends Seeder
                 ],
                 [
                     'type_transaction_id' => 2,
+                    'proyect_id' => 2,
                     'person_id' => 2,
                     'amount' => 200,
                     'date' => '2023-05-02',

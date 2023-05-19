@@ -25,7 +25,7 @@ class TransactionController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Transaction $transaction)
     {
         $transaction = new Transaction();
         return view('dashboard.transaction.create', ['transaction' => $transaction]);

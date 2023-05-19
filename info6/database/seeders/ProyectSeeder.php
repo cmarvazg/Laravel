@@ -17,7 +17,6 @@ class ProyectSeeder extends Seeder
         (
             [
                 [
-                    'transaction_id' => null,
                     'name' => 'Proyecto 1',
                     'date' => '2023-05-01',
                     'subtotal' => 100.00,
@@ -27,7 +26,6 @@ class ProyectSeeder extends Seeder
                     'comment' => 'Comentario del proyecto 1',
                 ],
                 [
-                    'transaction_id' => null,
                     'name' => 'Proyecto 2',
                     'date' => '2023-05-05',
                     'subtotal' => 150.00,

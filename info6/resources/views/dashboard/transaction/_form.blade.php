@@ -8,6 +8,14 @@
     </select>
 </div>
 <div class="mb-3 mt-3">
+    <label for="proyect_id" class="form-label fw-bold">Proyect</label>
+    <select class="form-select" id="proyect_id" name="proyect_id" aria-describedby="proyect">
+        @foreach(App\Models\Proyect::all() as $proyect)
+            <option value="{{ $proyect->id }}" {{ old('proyect_id',$transaction->proyect_id) == $proyect->id ? 'selected' : '' }}>{{ $proyect->name }}</option>
+        @endforeach
+    </select>
+</div>
+<div class="mb-3 mt-3">
     <label for="person_id" class="form-label fw-bold">Persona</label>
     <select class="form-select" id="person_id" name="person_id" aria-describedby="person">
         @foreach(App\Models\Person::all() as $person)
@@ -35,3 +43,6 @@
     <label for="reference" class="form-label fw-bold">Referencia</label>
     <input type="text" class="form-control" id="reference" name="reference" aria-describedby="reference" value="{{ old('reference',$transaction->reference)}}">
 </div>
+<button type="submit" class="btn btn-primary">Guardar</button>
+<a href="{{ route('transaction.index') }}" class="btn btn-danger">Cancelar</a>
+<br><br><br>

@@ -10,5 +10,5 @@ class Post extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    protected $fillable = ['title', 'url_clean', 'content'];
+    protected $fillable = ['title', 'url_clean', 'category_id', 'content'];
 }

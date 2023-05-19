@@ -14,16 +14,29 @@ class Person extends Model
     //Son los atributos que se acepta que llegen a la BD, para proteger de inyección
     protected $fillable = [
         'type_person_id',
+        'proyect_id',
         'business_name',
         'person',
         'rfc',
         'home',
         'email',
-        'phone'
+        'phone',
+        'debt'
     ];
 
     public function type_person()
     {
         return $this->belongsTo(TypePerson::class, 'type_person_id', 'id');
     }
+
+    public function proyect()
+    {
+        return $this->belongsTo(Proyect::class);
+    }
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class, 'person_id');
+    }
+    
 }
