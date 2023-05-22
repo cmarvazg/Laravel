@@ -10,6 +10,7 @@ use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\User;
+use App\Http\Requests\AddProyectRequest;
 
 class UserController extends Controller
 {

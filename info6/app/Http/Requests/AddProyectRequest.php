@@ -3,16 +3,15 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class UserEditRequest extends FormRequest
+class AddProyectRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -23,12 +22,7 @@ class UserEditRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'role_id' => ['required',Rule::in([1, 2]),],
-            'proyect_id' => 'nullable',
-            'name' => 'required',
-            'dad_last_name' => 'required',
-            'mom_last_name' => 'required',
-            'email' => 'required'
+            //
         ];
     }
 }

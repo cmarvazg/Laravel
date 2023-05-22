@@ -32,11 +32,12 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CategorySeeder::class,
             RoleSeeder::class,
-            UserSeeder::class,
             ProyectSeeder::class,
             TypePersonSeeder::class,
             PersonSeeder::class,
             TypeTransactionSeeder::class,
-            TransactionSeeder::class]);
+            TransactionSeeder::class,
+            UserSeeder::class
+        ]);
     }
 }

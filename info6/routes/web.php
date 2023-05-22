@@ -51,6 +51,8 @@ Route::middleware(['admin'])->group(function () {
     Route::resource('person',PersonController :: class);
     Route::resource('proyect',ProyectController :: class);
     Route::get('/proyect/{proyect}/people', [ProyectController::class, 'showPeople'])->name('proyect.showPeople');
+    Route::get('/proyect/{proyect}/transactions', [ProyectController::class, 'showTransactions'])->name('proyect.transactions');
+    Route::get('/proyect/{proyect}/users', [ProyectController::class, 'showUsers'])->name('proyect.users');
     Route::get('/person/{person}/setDebt', [PersonController::class, 'setDebt'])->name('person.setDebt');
     Route::put('/person/{person}/storeDebt', [PersonController::class, 'storeDebt'])->name('person.storeDebt');
     Route::resource('user',UserController :: class);

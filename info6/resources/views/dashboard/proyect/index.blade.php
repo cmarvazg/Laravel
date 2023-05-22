@@ -33,11 +33,10 @@
                     <a href="{{ route('proyect.showPeople', $proyect->id) }}" class="btn btn-info">Mostrar</a>
                 </td>
                 <td class="text-center">
-                    <a href="#" class="btn btn-info">Mostrar</a>
+                    <a href="{{ route('proyect.transactions', ['proyect' => $proyect->id]) }}" class="btn btn-info">Mostrar</a>
                 </td>
                 <td class="text-center">
-                    <a href="#" class="btn btn-info">Agregar</a>
-                    <a href="#" class="btn btn-info">Mostrar</a>
+                    <a href="{{ route('proyect.users', ['proyect' => $proyect->id]) }}" class="btn btn-info">Mostrar</a>
                 </td>
                 <td class="text-center">
                     <form action="{{route('proyect.destroy', $proyect->id)}}" method = "post" onsubmit="return confirm('¿Estás seguro de que quieres eliminar el proyecto {{ $proyect->id }}?');">

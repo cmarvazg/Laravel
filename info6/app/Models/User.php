@@ -23,6 +23,7 @@ class User extends Authenticatable
      //Son los atributos que se acepta que llegen a la BD, para proteger de inyección
     protected $fillable = [
         'role_id',
+        'proyect_id',
         'name',
         'dad_last_name',
         'mom_last_name',
@@ -33,6 +34,11 @@ class User extends Authenticatable
     public function role()
     {
         return $this->belongsTo(Role::class, 'role_id', 'id');
+    }
+
+    public function proyect()
+    {
+        return $this->belongsTo(Proyect::class, 'proyect_id', 'id');
     }
 
     /**

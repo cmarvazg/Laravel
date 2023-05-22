@@ -22,4 +22,6 @@
     <label for="content" class="form-label">Contenido</label>
     <textarea class="form-control" name="content" id="content" cols="30" rows="5">{{old('content',$post->content)}}</textarea>
 </div>
-<button type="submit" class="btn btn-primary">Guardar</button>
+<div class="text-center mb-3">
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</div>

@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
             [
                 [
                     'role_id' => 1,
+                    'proyect_id' => null,
                     'name' => 'Cristian Martín',
                     'dad_last_name' => 'Vázquez',
                     'mom_last_name' => 'González',
@@ -26,6 +27,7 @@ class UserSeeder extends Seeder
                 ],
                 [
                     'role_id' => 2,
+                    'proyect_id' => 2,
                     'name' => 'Carolina',
                     'dad_last_name' => 'Trejo',
                     'mom_last_name' => 'Islas',

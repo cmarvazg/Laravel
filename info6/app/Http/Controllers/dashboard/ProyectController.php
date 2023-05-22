@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProyectRequest;
 use Illuminate\Http\Request;
 use App\Models\Proyect;
+use App\Models\Transaction;
+use App\Models\User;
 
 class ProyectController extends Controller
 {
@@ -110,4 +112,17 @@ class ProyectController extends Controller
 
         return view('dashboard.proyect.people', compact('proyect', 'people'));
     }
+
+    public function showTransactions(Proyect $proyect)
+    {
+        $transactions = Transaction::where('proyect_id', $proyect->id)->get();
+        return view('dashboard.proyect.transactions', compact('proyect', 'transactions'));
+    }
+
+    public function showUsers(Proyect $proyect)
+    {
+        $users = User::where('proyect_id', $proyect->id)->get();
+        return view('dashboard.proyect.users', compact('proyect', 'users'));
+    }
+
 }

@@ -31,6 +31,8 @@
                 });
             </script>
         </div>
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
     </form>
 @endsection
