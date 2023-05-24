@@ -36,8 +36,9 @@
         </div>
         @if ($user->role_id == 2)
             <div class="mb-3 col-xxl-4 col-xl-12 col-lg-12">
-                <label for="proyect_id" class="form-label fw-bold">Proyectos</label>
+                <label for="proyect_id" class="form-label fw-bold">Proyecto</label>
                 <select class="form-select" id="proyect_id" name="proyect_id" aria-describedby="proyect_id">
+                    <option value="" selected>Seleccione una opción</option>
                     @foreach (App\Models\Proyect::all() as $proyect)
                     <option value="{{ $proyect->id }}" {{ old('proyect_id',$user->proyect_id) == $proyect->id ? 'selected' : '' }}>{{ $proyect->name }}</option>
                     @endforeach

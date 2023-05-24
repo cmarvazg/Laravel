@@ -12,7 +12,7 @@ use App\Models\Proyect;
 use App\Models\Person;
 use App\Models\User;
 use App\Models\Role;
-use App\Models\Category;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,7 +30,6 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call([
-            CategorySeeder::class,
             RoleSeeder::class,
             ProyectSeeder::class,
             TypePersonSeeder::class,

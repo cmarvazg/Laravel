@@ -32,7 +32,7 @@
                     <a href="{{route('user.edit', $user->id)}}" class="btn btn-primary">Editar</a>
                 </td>
                 <td class="text-center">
-                    <a href="{{route('user.setTempPassword', $user->id)}}" class="btn btn-info">Restablecer contraseña</a>
+                    <a href="{{route('user.setTempPassword', $user->id)}}" class="btn btn-info">Restablecer</a>
                 </td>
                 <td class="text-center">
                     <form action="{{route('user.destroy', $user->id)}}" method="post" onsubmit="return confirm('¿Estás seguro de que quieres eliminar el usuario {{ $user->id }}?');">
