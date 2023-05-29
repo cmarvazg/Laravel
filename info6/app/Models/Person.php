@@ -38,5 +38,4 @@ class Person extends Model
     {
         return $this->hasMany(Transaction::class, 'person_id');
     }
-    
 }

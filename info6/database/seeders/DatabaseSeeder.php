@@ -31,11 +31,11 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             RoleSeeder::class,
-            ProyectSeeder::class,
+            //ProyectSeeder::class,
             TypePersonSeeder::class,
-            PersonSeeder::class,
+            //PersonSeeder::class,
             TypeTransactionSeeder::class,
-            TransactionSeeder::class,
+            //TransactionSeeder::class,
             UserSeeder::class
         ]);
     }

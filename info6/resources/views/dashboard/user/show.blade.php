@@ -9,9 +9,6 @@
         <p><strong>Apellido materno:</strong> {{ $user->mom_last_name }}</p>
         <p><strong>Role:</strong> {{ $user->role->role }}</p>
         <p><strong>Email:</strong> {{ $user->email }}</p>
-        @if ($user->role_id == 2)
-            <p><strong>Proyecto:</strong> {{$user->proyect->name }}</p>
-        @endif
         @if (session('tempPassword'))
         <div class="alert alert-success" role="alert">
             Se asignó la contraseña temporal 

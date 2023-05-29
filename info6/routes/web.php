@@ -1,13 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\dashboard\PostController;
-use App\Http\Controllers\dashboard\CategoryController;
 use App\Http\Controllers\dashboard\UserController;
-use App\Http\Controllers\dashboard\PasswordController;
 use App\Http\Controllers\dashboard\PersonController;
 use App\Http\Controllers\dashboard\ProyectController;
 use App\Http\Controllers\dashboard\TransactionController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,18 +22,9 @@ Route::get('/', function () {
     return view('welcome');
 });
  
-Route::get('info6', function () {//Lo d comillas es el /cosa que se pone
-    // ...
-    //return 'Hola mundo';
+Route::get('info6', function () {
     return view('welcome');
 });
-
-//Route::get('/post', [PostController::class, 'index']);//Este controlador se necesita crear porque de momento no existe
-//es recomendable usar combres de rutas coherentes con el nombre dle controlador
-
-    //Route::resource('post',PostController :: class);
-    //Route::resource('category',CategoryController :: class);
-    //Route::resource('user',UserController :: class);
 
 Auth::routes();
 
@@ -46,16 +35,17 @@ Route::get('/resetPassword', function () {
 Route::put('/users/{user}/set-new-password', [UserController::class, 'setNewPassword'])->name('user.setNewPassword');
 
 Route::middleware(['admin'])->group(function () {
-    Route::resource('post',PostController :: class);
-    Route::resource('category',CategoryController :: class);
-    Route::resource('person',PersonController :: class);
     Route::resource('proyect',ProyectController :: class);
     Route::get('/proyect/{proyect}/people', [ProyectController::class, 'showPeople'])->name('proyect.showPeople');
     Route::get('/proyect/{proyect}/transactions', [ProyectController::class, 'showTransactions'])->name('proyect.transactions');
     Route::get('/proyect/{proyect}/users', [ProyectController::class, 'showUsers'])->name('proyect.users');
+
+    Route::resource('person',PersonController :: class);
     Route::get('/person/{person}/setDebt', [PersonController::class, 'setDebt'])->name('person.setDebt');
     Route::put('/person/{person}/storeDebt', [PersonController::class, 'storeDebt'])->name('person.storeDebt');
+
     Route::resource('user',UserController :: class);
-    Route::resource('transaction',TransactionController :: class);
     Route::get('/users/{user}/temp-password', [UserController::class, 'setTempPassword'])->name('user.setTempPassword');
+
+    Route::resource('transaction',TransactionController :: class);
 });

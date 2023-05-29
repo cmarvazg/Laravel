@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
                     'email' => 'martin@gmail.com',
                     'password' => bcrypt('#Unicode0')
                 ],
-                [
+                /*[
                     'role_id' => 2,
                     'proyect_id' => 2,
                     'name' => 'Carolina',
@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
                     'mom_last_name' => 'Islas',
                     'email' => 'carolina@gmail.com',
                     'password' => bcrypt('#Laravel0')
-                ]
+                ]*/
             ]
         );
     }
